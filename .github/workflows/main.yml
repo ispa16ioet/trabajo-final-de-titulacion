@@ -1,0 +1,17 @@
+name: Cron Job Example
+
+on:
+  schedule:
+    # Runs every day at 12:00 AM UTC
+    - cron: '* * * * *'
+
+jobs:
+  post_request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make POST Request
+        run: |
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -d '{"cron-key": "AIzaSyDh9JtXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"}' \
+            http://api.payroll.ioet.com:3001/invoice/save
