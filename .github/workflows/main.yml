@@ -12,6 +12,7 @@ jobs:
       - name: Make POST Request
         run: |
           curl -X POST \
-            -H "Content-Type: application/json" \
-            -d '{"cron-key": "AIzaSyDh9JtXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"}' \
-            http://api.payroll.ioet.com:3001/invoice/save
+            'https://stg.api.payroll.ioet.com/invoice/save' \
+            --header 'Accept: */*' \
+            --header 'User-Agent: Thunder Client (https://www.thunderclient.com)' \
+            --header 'Cron-Key: AIzaSyDh9JtXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
