@@ -3,7 +3,6 @@ name: Cron Job Example
 on:
   schedule:
     # Runs every day at 12:00 AM UTC
-    - cron: '* * * * *'
 
 jobs:
   post_request:
